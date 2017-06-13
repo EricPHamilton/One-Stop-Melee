@@ -2,6 +2,10 @@ var client_id = config.CLIENT_ID;
 var verify_api_key_request = 'https://api.twitch.tv/kraken/users/44322889?client_id=' + client_id
 var query_streams_request = 'https://api.twitch.tv/kraken/streams/?game=Super%20Smash%20Bros.%20Melee'
 
+function openURL(url) {
+    window.open(url);
+}
+
 function addStreamToHTML(stream) {
     var new_node = document.createElement('div');
 
@@ -10,11 +14,16 @@ function addStreamToHTML(stream) {
     a.append(link_text);
     a.href = stream.channel.url;
 
+    var img_link = document.createElement('a');
+    img_link.href = stream.channel.url;
+
     var img = document.createElement('img');
     img.src = stream.preview.medium;
 
+    img_link.appendChild(img);
+
     new_node.appendChild(a);
-    new_node.appendChild(img);
+    new_node.appendChild(img_link);
 
     var stream_list = document.getElementById("streams");
     stream_list.appendChild(new_node);
