@@ -14,12 +14,13 @@ function openURL(url) {
 }
 
 function addStreamToHTML(stream) {
+  console.log(stream);
     var new_node = document.createElement('div');
 
     var link = document.createElement('a');
-    var link_text = document.createTextNode(stream.channel.name + '\n');
+    var text = stream.channel.name + ': ' + stream.viewers + " viewers";
+    var link_text = document.createTextNode(text);
     link.append(link_text);
-    link.href = stream.channel.url;
 
     var img = document.createElement('img');
     img.src = stream.preview.medium;
@@ -33,6 +34,11 @@ function addStreamToHTML(stream) {
 
     new_node.appendChild(link);
     new_node.appendChild(img_container);
+
+    var bot_buffer = document.createElement('div');
+    bot_buffer.className += " bot_buff";
+
+    new_node.appendChild(bot_buffer);
 
     var stream_list = document.getElementById("streams");
     stream_list.appendChild(new_node);
