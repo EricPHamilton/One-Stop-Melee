@@ -5,13 +5,13 @@
   "description": "This is a cookie-cutter description for One-Stop Melee, and will be filled in once more features are added.",
   "version": "0.1",
 
-  "icons": { "16": "icons/Shine16.png",
-             "48": "icons/Shine48.png",
-             "128": "icons/Shine128.png"
+  "icons": { "16": "/assets/Shine16.png",
+             "48": "/assets/Shine48.png",
+             "128": "/assets/Shine128.png"
            },
 
   "browser_action": {
-    "default_icon": "icons/Shine128.png",
+    "default_icon": "/assets/Shine128.png",
     "default_popup": "popup.html"
   },
 
