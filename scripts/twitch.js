@@ -1,4 +1,4 @@
-var client_id = config.CLIENT_ID;
+var client_id = twitch.CLIENT_ID;
 var verify_api_key_request = 'https://api.twitch.tv/kraken/users/44322889?client_id=' + client_id
 var query_streams_request = 'https://api.twitch.tv/kraken/streams/?game=Super%20Smash%20Bros.%20Melee'
 
